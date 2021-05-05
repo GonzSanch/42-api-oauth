@@ -1,0 +1,16 @@
+version: '3.4'
+
+services: 
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+                # depends_on: 
+                #     - database
+                #     - redis
+        ports: 
+            - "3000:3000"
+        volumes: 
+            - ./api42/:/app
+            - ./api42/node_modules:/app/node_modules
+    
